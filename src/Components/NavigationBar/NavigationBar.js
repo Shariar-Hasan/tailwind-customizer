@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { moreNavlinkData, navbarData } from "./../../Datalist/NavbarData";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import CustomElementLink from "../CommonComponents/CustomElementLink";
 
 const NavigationBar = () => {
   const [isMoreButtonOpen, setIsMoreButtonOpen] = useState(false);
@@ -39,7 +40,7 @@ const NavigationBar = () => {
                 className="px-4 py-2 -mt-2 text-sm font-semibold bg-transparent rounded-lg dark:bg-transparent dark:hover:bg-gray-600 dark:focus:bg-gray-600 dark:focus:text-white dark:hover:text-white dark:text-gray-200  md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
                 onClick={() => setIsMoreButtonOpen((prev) => !prev)}
               >
-                <span>Elements</span>
+                <span>Customize</span>
                 <span>
                   <i
                     className={`fa-solid fa-chevron-down inline-block duration-200  ml-1 ${
@@ -58,14 +59,12 @@ const NavigationBar = () => {
                 >
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 ">
                     {moreNavlinkData.map((item, i) => (
-                      <Link key={i} to={"/customize/" + item.routelink}>
-                        <div
-                          className="ml-3 hover:bg-gray-500 p-2 rounded-lg"
-                          onClick={() => setIsMoreButtonOpen((prev) => !prev)}
-                        >
-                          <p className="font-semibold">{item.name}</p>
-                          <p className="text-sm">{item.desc}</p>
-                        </div>
+                      <Link
+                        key={i}
+                        to={"/customize/" + item.routelink}
+                        onClick={() => setIsMoreButtonOpen((prev) => !prev)}
+                      >
+                        <CustomElementLink item={item} />
                       </Link>
                     ))}
                   </div>

@@ -12,7 +12,7 @@ const SideBar = ({ currentAttribute, setCurrentAttribute }) => {
           {customizationList.map((item, i) => (
             <li
               key={i}
-              onClick={() => setCurrentAttribute(item.name)}
+              onClick={() => setCurrentAttribute(item.element)}
               className={`my-1 p-2 rounded-md cursor-pointer duration-200 ${
                 currentAttribute === item.name ? "bg-gray-900 text-white" : ""
               }`}

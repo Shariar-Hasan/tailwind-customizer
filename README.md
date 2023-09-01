@@ -1,70 +1,53 @@
-# Getting Started with Create React App
+# Web Element Customization Tool
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<div align="center" style="margin: 0 auto;">
+  <img src="./src/Assets/web_banner.png" alt="Tailwind Cutomizer Banner">
+</div>
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [Introduction](#introduction)
+- [Features](#features)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
 
-### `npm start`
+## Introduction
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The Tailwind Customization Tool is a web application designed to empower users to customize various web elements, including buttons, divs as box, inputs and more. It provides an intuitive interface for adjusting design parameters such as border styles, border radius, background colors, margins, opacity levels, padding, and typography settings. After customizing their chosen elements, users can instantly generate the corresponding Tailwind CSS code, simplifying the process of integrating their customized designs into their web projects.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Features
 
-### `npm test`
+- **Element Customization**: Customize a wide range of web elements, including buttons, divs, inputs and more.
+  
+- **Comprehensive Design Options**: Access a variety of design parameters, such as borders, border radius, background colors, margins, opacity, padding, and typography settings.
+  
+- **Real-Time Preview**: See an instant preview of your customized element as you make changes to design parameters.
+  
+- **Code Generation**: Generate CSS or Tailwind CSS code that reflects the customized styles with a single click.
+  
+- **User-Friendly Interface**: Intuitive and user-friendly interface that accommodates users with varying levels of design expertise.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Usage
 
-### `npm run build`
+1. Choose a web element (e.g., button, box, input) that you want to customize.
+2. Use the intuitive interface to adjust design parameters such as borders, background colors, margins, opacity, padding, and typography.
+3. Observe the real-time preview to see how your customizations affect the element's appearance.
+4. Once satisfied with your design, click the "Generate Code" button to obtain the corresponding CSS or Tailwind CSS code.
+5. Copy the generated code and integrate it into your web project.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Contributing
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+We welcome contributions to improve this project! To contribute, please follow these steps:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Fork this repository.
+2. Create a new branch for your feature or bug fix: `git checkout -b your-feature-name`.
+3. Make your changes and commit them with descriptive commit messages.
+4. Push your changes to your fork: `git push origin feature-name`.
+5. Open a pull request to the `Colaboration` branch of this repository, describing your changes and their purpose.
 
-### `npm run eject`
+## License
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Copyright © 2023 Shariar Hasan.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+All rights reserved. This project is licensed under the [MIT License](LICENSE).

@@ -9,31 +9,44 @@ import BoxCard from "../Components/ElementCards/BoxCard";
 const Customize = () => {
   const { element = "" } = useParams();
 
-  const [currentElement, setCurrentElement] = useState("Button");
-  const [currentAttribute, setCurrentAttribute] = useState("Border Radius");
+  const [currentElement, setCurrentElement] = useState(null);
+  const [currentAttribute, setCurrentAttribute] = useState(null);
   useEffect(() => {
-    const item = moreNavlinkData.find((item) => item.routelink === element);
-    console.log({ item, element, moreNavlinkData });
-    setCurrentElement(item?.name || "");
+    // checking and returning the url matched element
+    const itemElement = moreNavlinkData.find(
+      (item) => item.routelink === element
+    );
+    console.log({ itemElement, element, moreNavlinkData });
+    // set found item , if none then set Error showing item
+    setCurrentElement(
+      itemElement.element || (
+        <h2 className="text-3xl p-3">
+          Please select items from the navigation bar
+        </h2>
+      )
+    );
   }, [element]);
   return (
     <div>
       <NavigationBar />
-      <div className="container mx-auto my-4">
+      <div className="container mx-auto my-5">
         <div className="grid grid-cols-12">
-          <div className="md:col-span-9 col-span-12">
-            {currentElement === "Button" ? (
-              <ButtonCard />
-            ) : currentElement === "Box" ? (
-              <BoxCard />
-            ) : (
-              //   <h1 className="text-4xl">
-              //     Please select an Element from the navbar
-              //   </h1>
-              <h1 className="text-4xl">Other Element will be added soon</h1>
-            )}
+          <div className="grid grid-cols-12 md:col-span-9 col-span-12">
+            <div className="col-span-12">
+              {currentElement ? (
+                currentElement
+              ) : (
+                <h1 className="text-4xl">Other Element will be added soon</h1>
+              )}
+            </div>
+            <div className="col-span-12 my-5">
+              <div className="box">
+                <div className="preview border-2 mb-4">
+                  {currentAttribute}
+                </div>
+              </div>
+            </div>
           </div>
-
           <div className="md:col-span-3 col-span-12">
             <SideBar
               currentAttribute={currentAttribute}

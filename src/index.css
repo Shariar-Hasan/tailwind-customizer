@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 .box {
-  @apply p-5 mx-2 bg-white shadow-lg rounded;
+  @apply p-5 mx-2 bg-white shadow-md rounded;
 }

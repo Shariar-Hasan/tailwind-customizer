@@ -5,3 +5,16 @@
 .box {
   @apply p-5 mx-2 bg-white shadow-md rounded;
 }
+.btn-group-curvenes {
+  @apply first:rounded-bl-lg first:rounded-tl-lg last:rounded-br-lg last:rounded-tr-lg;
+}
+.bg-striped {
+  background: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 10px,
+      #ccc 10px,
+      #ccc 20px
+    ),
+    linear-gradient(to bottom, #eee, #999);
+}

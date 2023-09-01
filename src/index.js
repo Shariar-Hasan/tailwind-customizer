@@ -5,13 +5,16 @@ import "./App.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
+import { SiteProvider } from "./Context/AllContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <SiteProvider>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </SiteProvider>
   </React.StrictMode>
 );
 

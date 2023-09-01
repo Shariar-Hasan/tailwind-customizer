@@ -5,8 +5,13 @@ import Typography from "./../Components/StyleDesign/Typography";
 import Padding from "./../Components/StyleDesign/Padding";
 import Margin from "./../Components/StyleDesign/Margin";
 import BorderRadius from "./../Components/StyleDesign/BorderRadius";
+import Display from "./../Components/StyleDesign/Display";
 
 export const customizationList = [
+  {
+    name: "Background",
+    element: <Background />,
+  },
   {
     name: "Border",
     element: <Border />,
@@ -14,10 +19,6 @@ export const customizationList = [
   {
     name: "Border Radius",
     element: <BorderRadius />,
-  },
-  {
-    name: "Background",
-    element: <Background />,
   },
   {
     name: "Opacity",
@@ -34,5 +35,9 @@ export const customizationList = [
   {
     name: "Margin",
     element: <Margin />,
+  },
+  {
+    name: "Display",
+    element: <Display />,
   },
 ];

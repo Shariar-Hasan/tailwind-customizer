@@ -1,16 +1,10 @@
 import React from "react";
 import Border from "../StyleDesign/Border";
+import { useSiteData } from "../../Context/AllContext";
 
 const BoxCard = ({ currentAttribute }) => {
-  return (
-    <div className="box">
-      <div className="p-2">
-        <div className="preview flex justify-center items-center h-40 border-2 mb-4">
-          <div>I Am Box</div>
-        </div>
-      </div>
-    </div>
-  );
+  const { allClassNameInOne } = useSiteData();
+  return <div className={allClassNameInOne}>I Am Box</div>;
 };
 
 export default BoxCard;

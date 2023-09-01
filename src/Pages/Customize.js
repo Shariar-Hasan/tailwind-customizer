@@ -1,16 +1,19 @@
 import React, { useEffect, useState } from "react";
 import NavigationBar from "../Components/NavigationBar/NavigationBar";
-import ButtonCard from "../Components/ElementCards/ButtonCard";
 import SideBar from "../Components/SideBar/SideBar";
 import { useParams } from "react-router-dom";
 import { moreNavlinkData } from "../Datalist/NavbarData";
-import BoxCard from "../Components/ElementCards/BoxCard";
+import { customizationList } from "../Datalist/CustomizationList";
 
 const Customize = () => {
   const { element = "" } = useParams();
 
-  const [currentElement, setCurrentElement] = useState(null);
-  const [currentAttribute, setCurrentAttribute] = useState(null);
+  const [currentElement, setCurrentElement] = useState(
+    moreNavlinkData[0].element
+  );
+  const [currentAttribute, setCurrentAttribute] = useState(
+    customizationList[0].element
+  );
   useEffect(() => {
     // checking and returning the url matched element
     const itemElement = moreNavlinkData.find(
@@ -32,7 +35,7 @@ const Customize = () => {
       <div className="container mx-auto my-5">
         <div className="grid grid-cols-12">
           <div className="grid grid-cols-12 md:col-span-9 col-span-12">
-            <div className="col-span-12">
+            <div className="col-span-12 sticky z-10 top-0">
               {currentElement ? (
                 currentElement
               ) : (
@@ -41,9 +44,7 @@ const Customize = () => {
             </div>
             <div className="col-span-12 my-5">
               <div className="box">
-                <div className="preview border-2 mb-4">
-                  {currentAttribute}
-                </div>
+                <div className="border-2 mb-4">{currentAttribute}</div>
               </div>
             </div>
           </div>

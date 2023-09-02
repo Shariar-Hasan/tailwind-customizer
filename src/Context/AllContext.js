@@ -43,7 +43,7 @@ export const SiteProvider = ({ children }) => {
   const [fontWeight, setFontWeight] = useState("");
 
   // padding classes
-  const [paddingClassName, setPaddingClassName] = useState("");
+  const [paddingClassName, setPaddingClassName] = useState("p-5");
   const [allPadding, setAllPadding] = useState("p-5");
   const [topPadding, setTopPadding] = useState("");
   const [bottomPadding, setBottomPadding] = useState("");
@@ -51,7 +51,7 @@ export const SiteProvider = ({ children }) => {
   const [rightPadding, setRightPadding] = useState("");
 
   // margin classes
-  const [marginClassName, setMarginClassName] = useState("");
+  const [marginClassName, setMarginClassName] = useState("m-5");
   const [allMargin, setAllMargin] = useState("m-5");
   const [topMargin, setTopMargin] = useState("");
   const [bottomMargin, setBottomMargin] = useState("");

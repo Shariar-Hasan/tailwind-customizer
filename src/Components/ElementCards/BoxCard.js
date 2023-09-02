@@ -1,9 +1,9 @@
 import React from "react";
 import { useSiteData } from "../../Context/AllContext";
 
-const BoxCard = ({ currentAttribute }) => {
+const BoxCard = ({ textToShow }) => {
   const { allClassNameInOne } = useSiteData();
-  return <div className={allClassNameInOne}>I Am Box</div>;
+  return <div className={allClassNameInOne}>{textToShow}</div>;
 };
 
 export default BoxCard;

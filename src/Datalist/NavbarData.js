@@ -1,5 +1,6 @@
 import ButtonCard from "../Components/ElementCards/ButtonCard";
 import ElementCard from "../Components/ElementCards/ElementCard";
+import InputCard from "../Components/ElementCards/InputCard";
 import BoxCard from "./../Components/ElementCards/BoxCard";
 
 export const navbarData = [
@@ -17,7 +18,7 @@ export const moreNavlinkData = [
     name: "Button",
     desc: "Custom tailwind button",
     routelink: "button",
-    element: <ElementCard child={<ButtonCard />} />,
+    element: <ElementCard child={<ButtonCard textToShow={"Custom Button"}/>} />,
     code: "button",
     codeText: "Custom Button",
     icon: <i className="fa-solid fa-toggle-on"></i>,
@@ -26,7 +27,7 @@ export const moreNavlinkData = [
     name: "Box",
     desc: "Custom tailwind box",
     routelink: "box",
-    element: <ElementCard child={<BoxCard />} />,
+    element: <ElementCard child={<BoxCard textToShow={"Custom Box"}/>} />,
     code: "div",
     codeText: "Custom Box",
     icon: <i className="fa-solid fa-box"></i>,
@@ -35,9 +36,7 @@ export const moreNavlinkData = [
     name: "Text Input",
     desc: "Custom tailwind text input",
     routelink: "text-input",
-    element: (
-      <ElementCard child={<h1 className="text-4xl">Not Build yet</h1>} />
-    ),
+    element: <ElementCard child={<InputCard textToShow={"Custom Input Box"}/>} />,
     code: "input",
     codeText: "Custom Placeholder",
     icon: <i className="fa-solid fa-keyboard"></i>,

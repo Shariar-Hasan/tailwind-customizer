@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import NavigationBar from "../Components/NavigationBar/NavigationBar";
 import SideBar from "../Components/SideBar/SideBar";
 import { useParams } from "react-router-dom";
 import { moreNavlinkData } from "../Datalist/NavbarData";
@@ -31,11 +30,10 @@ const Customize = () => {
   }, [element]);
   return (
     <div>
-      <NavigationBar />
       <div className="container mx-auto my-5">
         <div className="grid grid-cols-12">
           <div className="grid grid-cols-12 md:col-span-9 col-span-12">
-            <div className="col-span-12 sticky z-10 top-0">
+            <div className="col-span-12 md:sticky z-10 top-0">
               {currentElement ? (
                 currentElement
               ) : (

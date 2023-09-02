@@ -5,6 +5,7 @@ import { useSiteData } from "../../Context/AllContext";
 import { useParams } from "react-router-dom";
 import { moreNavlinkData } from "../../Datalist/NavbarData";
 import { toast } from "react-hot-toast";
+import { copy } from "../../Datalist/Functions/copyToClipBoard";
 
 const ElementCard = ({ child }) => {
   const [themeClassName, setThemeClassName] = useState(theme[0]);
@@ -20,23 +21,7 @@ const ElementCard = ({ child }) => {
     );
     setCurrentElement(itemElement);
   }, [element]);
-  const copy = () => {
-    const textToCopy = `<${currentElement?.code} class="${allClassNameInOne}">${currentElement?.codeText}</${currentElement?.code}>`;
-    const tempInput = document.createElement("input");
-    tempInput.value = textToCopy;
 
-    // Append the input element to the DOM
-    document.body.appendChild(tempInput);
-
-    // Select and copy the text
-    tempInput.select();
-    document.execCommand("copy");
-    // Remove the temporary input element
-    document.body.removeChild(tempInput);
-
-    toast.success("Code Successfully Copied!");
-
-  };
   return (
     <div className="box p-2 shadow-sm">
       <button
@@ -57,9 +42,10 @@ const ElementCard = ({ child }) => {
         {showCode ? "Hide Code" : "Generate Code"}
       </button>
       <div
-        className={`preview flex justify-center items-center min-h-40 border-2 my-1 ${themeClassName.style}`}
+        className={`preview flex justify-center items-center min-h-40 border-2 my-1 p-2 ${themeClassName.style}`}
       >
-        {child}
+        <div className="bg-gray-400 duration-500">{child}</div>
+        
       </div>
       {
         <div
@@ -69,7 +55,11 @@ const ElementCard = ({ child }) => {
               : "h-0 scale-y-0 invisible hidden"
           }`}
           title="Click to Copy"
-          onClick={copy}
+          onClick={() =>
+            copy(
+              `<${currentElement?.code} class="${allClassNameInOne}">${currentElement?.codeText}</${currentElement?.code}>`
+            )
+          }
         >
           <span>{"<"}</span>
           <span className="text-red-600">{currentElement?.code + " "}</span>

@@ -19,7 +19,7 @@ const Customize = () => {
     const itemElement = moreNavlinkData.find(
       (item) => item.routelink === element
     );
-    console.log({ itemElement, element, moreNavlinkData });
+    // console.log({ itemElement, element, moreNavlinkData });
     // set found item , if none then set Error showing item
     setCurrentElement(
       itemElement.element || (

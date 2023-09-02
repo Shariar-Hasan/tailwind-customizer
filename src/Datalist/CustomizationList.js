@@ -36,8 +36,8 @@ export const customizationList = [
     name: "Margin",
     element: <Margin />,
   },
-  {
-    name: "Display",
-    element: <Display />,
-  },
+  // {
+  //   name: "Display",
+  //   element: <Display />,
+  // },
 ];

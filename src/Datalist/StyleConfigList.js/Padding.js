@@ -20,20 +20,6 @@ export const allPaddingDatalist = [
   { value: "14", style: "p-14" },
   { value: "16", style: "p-16" },
   { value: "20", style: "p-20" },
-  { value: "24", style: "p-24" },
-  { value: "28", style: "p-28" },
-  { value: "32", style: "p-32" },
-  { value: "36", style: "p-36" },
-  { value: "40", style: "p-40" },
-  { value: "44", style: "p-44" },
-  { value: "48", style: "p-48" },
-  { value: "52", style: "p-52" },
-  { value: "56", style: "p-56" },
-  { value: "60", style: "p-60" },
-  { value: "64", style: "p-64" },
-  { value: "72", style: "p-72" },
-  { value: "80", style: "p-80" },
-  { value: "96", style: "p-96" },
 ];
 export const topPaddingDatalist = [
   { value: "0", style: "pt-0" },
@@ -57,11 +43,6 @@ export const topPaddingDatalist = [
   { value: "14", style: "pt-14" },
   { value: "16", style: "pt-16" },
   { value: "20", style: "pt-20" },
-  { value: "24", style: "pt-24" },
-  { value: "28", style: "pt-28" },
-  { value: "32", style: "pt-32" },
-  { value: "36", style: "pt-36" },
-  { value: "40", style: "pt-40" },
 ];
 export const bottomPaddingDatalist = [
   { value: "0", style: "pb-0" },
@@ -85,11 +66,6 @@ export const bottomPaddingDatalist = [
   { value: "14", style: "pb-14" },
   { value: "16", style: "pb-16" },
   { value: "20", style: "pb-20" },
-  { value: "24", style: "pb-24" },
-  { value: "28", style: "pb-28" },
-  { value: "32", style: "pb-32" },
-  { value: "36", style: "pb-36" },
-  { value: "40", style: "pb-40" },
 ];
 export const leftPaddingDatalist = [
   { value: "0", style: "pl-0" },
@@ -113,11 +89,6 @@ export const leftPaddingDatalist = [
   { value: "14", style: "pl-14" },
   { value: "16", style: "pl-16" },
   { value: "20", style: "pl-20" },
-  { value: "24", style: "pl-24" },
-  { value: "28", style: "pl-28" },
-  { value: "32", style: "pl-32" },
-  { value: "36", style: "pl-36" },
-  { value: "40", style: "pl-40" },
 ];
 export const rightPaddingDatalist = [
   { value: "0", style: "pr-0" },
@@ -141,9 +112,4 @@ export const rightPaddingDatalist = [
   { value: "14", style: "pr-14" },
   { value: "16", style: "pr-16" },
   { value: "20", style: "pr-20" },
-  { value: "24", style: "pr-24" },
-  { value: "28", style: "pr-28" },
-  { value: "32", style: "pr-32" },
-  { value: "36", style: "pr-36" },
-  { value: "40", style: "pr-40" },
 ];

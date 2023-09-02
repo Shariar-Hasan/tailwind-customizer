@@ -6,18 +6,21 @@ const ButtonGroupElement = ({
   setupFunction,
   itemValue,
   toCheck,
+  grid = 0,
 }) => {
   return (
-    <div className="p-5 group-hover:bg-slate-600 duration-300 cursor-pointer col-span-1">
+    <div
+      className={`p-5 group-hover:bg-slate-600 text-center duration-300  cursor-pointer col-span-1 ${
+        grid != 0 ? "grid grid-cols-7" : ""
+      }`}
+    >
       {datalist.map((item, i) => (
         <button
           key={i}
           onClick={() => setupFunction(item[toCheck])}
-          className={`btn py-2 px-4 bg-gray-100 duration-200  text-black  btn-group-curvenes ${
-            item[toCheck] === activeChecker
-              ? "bg-gray-800 text-white"
-              : ""
-          }`}
+          className={`btn p-2  bg-gray-100 col-span-1 duration-200 border  text-black  ${
+            grid == 0 ? "btn-group-curvenes" : ""
+          } ${item[toCheck] === activeChecker ? "bg-gray-800 text-white" : ""}`}
         >
           {item[itemValue]}
         </button>

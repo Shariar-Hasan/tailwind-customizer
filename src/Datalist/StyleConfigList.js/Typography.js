@@ -1,5 +1,9 @@
 export const fontFamilyDatalist = [
   {
+    value: "Inherit",
+    style: "font-inherit",
+  },
+  {
     value: "Sans",
     style: "font-sans",
   },

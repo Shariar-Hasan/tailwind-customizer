@@ -4,6 +4,7 @@ import Home from "./Pages/Home";
 import Contact from "./Pages/Contact";
 import Customize from "./Pages/Customize";
 import { Toaster } from "react-hot-toast";
+import NoPageFound from "./Pages/NoPageFound";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/customize/" element={<Customize />} />
         <Route path="/customize/:element" element={<Customize />} />
+        <Route path="/*" element={<NoPageFound />} />
       </Routes>
     </div>
   );

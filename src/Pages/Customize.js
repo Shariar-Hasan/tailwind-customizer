@@ -3,25 +3,26 @@ import SideBar from "../Components/SideBar/SideBar";
 import { useParams } from "react-router-dom";
 import { moreNavlinkData } from "../Datalist/NavbarData";
 import { customizationList } from "../Datalist/CustomizationList";
+import NoPageFound from "./NoPageFound";
 
 const Customize = () => {
   const { element = "" } = useParams();
 
+  const [notFound, setNotFound] = useState(false);
   const [currentElement, setCurrentElement] = useState(
-    moreNavlinkData[0].element
+    moreNavlinkData[0]?.element
   );
   const [currentAttribute, setCurrentAttribute] = useState(
-    customizationList[0].element
+    customizationList[0]?.element
   );
   useEffect(() => {
     // checking and returning the url matched element
     const itemElement = moreNavlinkData.find(
       (item) => item.routelink === element
     );
-    // console.log({ itemElement, element, moreNavlinkData });
-    // set found item , if none then set Error showing item
+    if (!itemElement) setNotFound(true);
     setCurrentElement(
-      itemElement.element || (
+      itemElement?.element || (
         <h2 className="text-3xl p-3">
           Please select items from the navigation bar
         </h2>
@@ -29,8 +30,10 @@ const Customize = () => {
     );
   }, [element]);
   return (
-    <div>
-      <div className="container mx-auto my-5">
+    <div className="container mx-auto my-5">
+      {notFound ? (
+        <NoPageFound />
+      ) : (
         <div className="grid grid-cols-12">
           <div className="grid grid-cols-12 md:col-span-9 col-span-12">
             <div className="col-span-12 md:sticky z-10 top-0">
@@ -53,7 +56,7 @@ const Customize = () => {
             />
           </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };

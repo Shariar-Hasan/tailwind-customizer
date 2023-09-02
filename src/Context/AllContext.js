@@ -8,6 +8,7 @@ export const useSiteData = () => {
 
 export const SiteProvider = ({ children }) => {
   // state declaration
+  const [showStyleChange, setShowStyleChange] = useState(false);
   // border radius
   const [borderRadiusClassName, setBorderRadiusClassName] =
     useState("rounded-none");
@@ -65,7 +66,7 @@ export const SiteProvider = ({ children }) => {
   useEffect(() => {
     const fullClassName = `${borderRadiusClassName} ${borderClassName} ${borderSize} ${borderStyle} ${borderColor} ${opacityClassName} ${fontColor} ${fontFamily} ${fontWeight} ${fontSize} ${paddingClassName} ${marginClassName} ${backgroundClassName} ${displayClassName}`;
     setAllClassNameInOne(fullClassName);
-    console.log(fullClassName)
+    console.log(fullClassName);
   }, [
     borderRadiusClassName,
     borderClassName,
@@ -175,6 +176,10 @@ export const SiteProvider = ({ children }) => {
     //all class name in one
     allClassNameInOne,
     setAllClassNameInOne,
+
+    //style change state
+    showStyleChange,
+    setShowStyleChange,
   };
   return <SiteContext.Provider value={value}>{children}</SiteContext.Provider>;
 };

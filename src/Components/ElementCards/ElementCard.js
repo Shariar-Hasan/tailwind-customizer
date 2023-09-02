@@ -9,7 +9,8 @@ import { copy } from "../../Datalist/Functions/copyToClipBoard";
 
 const ElementCard = ({ child }) => {
   const [themeClassName, setThemeClassName] = useState(theme[0]);
-  const { allClassNameInOne } = useSiteData();
+  const { allClassNameInOne, showStyleChange, setShowStyleChange } =
+    useSiteData();
   const { element = "" } = useParams();
   const [currentElement, setCurrentElement] = useState();
   const [showCode, setShowCode] = useState(false);
@@ -41,11 +42,16 @@ const ElementCard = ({ child }) => {
       >
         {showCode ? "Hide Code" : "Generate Code"}
       </button>
+      <button
+        className="ml-2 bg-gray-900 rounded-md text-gray-200 p-3"
+        onClick={() => setShowStyleChange((prev) => !prev)}
+      >
+        {showStyleChange ? "Hide Style Change" : "Show Style Change"}
+      </button>
       <div
         className={`preview flex justify-center items-center min-h-40 border-2 my-1 p-2 ${themeClassName.style}`}
       >
-        <div className="bg-gray-400 duration-500">{child}</div>
-        
+        <div className={showStyleChange ? `bg-gray-400 ` : ""}>{child}</div>
       </div>
       {
         <div
@@ -68,7 +74,6 @@ const ElementCard = ({ child }) => {
           {">" + currentElement?.codeText + "</"}
           <span className="text-red-600">{currentElement?.code}</span>
           {">"}
-          {}
         </div>
       }
     </div>

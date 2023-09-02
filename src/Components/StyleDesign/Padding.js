@@ -10,13 +10,21 @@ import {
 import { useSiteData } from "../../Context/AllContext";
 
 const Padding = () => {
-  const [allPadding, setAllPadding] = useState("p-2");
-  const [topPadding, setTopPadding] = useState("p-t-2");
-  const [bottomPadding, setBottomPadding] = useState("p-b-2");
-  const [leftPadding, setLeftPadding] = useState("p-l-2");
-  const [rightPadding, setRightPadding] = useState("p-r-2");
   // getting context data
-  const { paddingClassName, setPaddingClassName } = useSiteData();
+  const {
+    paddingClassName,
+    setPaddingClassName,
+    allPadding,
+    setAllPadding,
+    topPadding,
+    setTopPadding,
+    bottomPadding,
+    setBottomPadding,
+    leftPadding,
+    setLeftPadding,
+    rightPadding,
+    setRightPadding,
+  } = useSiteData();
 
   //   load data
   function setAll(item) {
@@ -47,17 +55,17 @@ const Padding = () => {
   useEffect(() => {
     let classNameTemp = null;
     if (
-      allPadding.replace("p", "") !== topPadding.replace("p-t", "") ||
-      allPadding.replace("p", "") !== rightPadding.replace("p-r", "") ||
-      allPadding.replace("p", "") !== leftPadding.replace("p-l", "") ||
-      allPadding.replace("p", "") !== bottomPadding.replace("p-b", "")
+      allPadding.replace("p", "") !== topPadding.replace("pt", "") ||
+      allPadding.replace("p", "") !== rightPadding.replace("pr", "") ||
+      allPadding.replace("p", "") !== leftPadding.replace("pl", "") ||
+      allPadding.replace("p", "") !== bottomPadding.replace("pb", "")
     ) {
       classNameTemp = `${topPadding} ${bottomPadding} ${leftPadding} ${rightPadding}`;
     } else {
       classNameTemp = allPadding;
     }
     setPaddingClassName(classNameTemp);
-    console.log(classNameTemp);
+    // console.log(classNameTemp);
   }, [allPadding, topPadding, leftPadding, rightPadding, bottomPadding]);
   return (
     <div className="text-center">
@@ -70,6 +78,7 @@ const Padding = () => {
             setupFunction={setTopPadding}
             itemValue={"value"}
             toCheck={"style"}
+            grid={7}
           />
         </div>
         <div className="group col-span-1 col-start-1">
@@ -80,6 +89,7 @@ const Padding = () => {
             setupFunction={setLeftPadding}
             itemValue={"value"}
             toCheck={"style"}
+            grid={7}
           />
         </div>
         <div className="group col-span-1">
@@ -90,6 +100,7 @@ const Padding = () => {
             setupFunction={setAll}
             itemValue={"value"}
             toCheck={"style"}
+            grid={7}
           />
         </div>
         <div className="group col-span-1">
@@ -100,6 +111,7 @@ const Padding = () => {
             setupFunction={setRightPadding}
             itemValue={"value"}
             toCheck={"style"}
+            grid={7}
           />
         </div>
         <div className="group col-span-1 col-start-2">
@@ -110,6 +122,7 @@ const Padding = () => {
             setupFunction={setBottomPadding}
             itemValue={"value"}
             toCheck={"style"}
+            grid={7}
           />
         </div>
       </div>

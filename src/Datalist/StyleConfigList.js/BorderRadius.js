@@ -1,26 +1,55 @@
-export const borderRadiusdata = [
-    {
-        value : "None",
-        style : "rounded-none",
-    },
-    {
-        value : "None",
-        style : "rounded-none",
-    },
-    {
-        value : "None",
-        style : "rounded-none",
-    },
-    {
-        value : "None",
-        style : "rounded-none",
-    },
-    {
-        value : "None",
-        style : "rounded-none",
-    },
-    {
-        value : "None",
-        style : "rounded-none",
-    },
-]
+export const allBorderRadiusDatalist = [
+  { value: "None", style: "rounded-none" },
+  { value: "sm", style: "rounded-sm" },
+  { value: "Normal", style: "rounded" },
+  { value: "md", style: "rounded-md" },
+  { value: "lg", style: "rounded-lg" },
+  { value: "xl", style: "rounded-xl" },
+  { value: "2xl", style: "rounded-2xl" },
+  { value: "3xl", style: "rounded-3xl" },
+  { value: "full", style: "rounded-full" },
+];
+export const topBorderRadiusDatalist = [
+  { value: "None", style: "rounded-tl-none" },
+  { value: "sm", style: "rounded-tl-sm" },
+  { value: "Normal", style: "rounded-tl" },
+  { value: "md", style: "rounded-tl-md" },
+  { value: "lg", style: "rounded-tl-lg" },
+  { value: "xl", style: "rounded-tl-xl" },
+  { value: "2xl", style: "rounded-tl-2xl" },
+  { value: "3xl", style: "rounded-tl-3xl" },
+  { value: "full", style: "rounded-tl-full" },
+];
+export const bottomBorderRadiusDatalist = [
+  { value: "None", style: "rounded-br-none" },
+  { value: "sm", style: "rounded-br-sm" },
+  { value: "Normal", style: "rounded-br" },
+  { value: "md", style: "rounded-br-md" },
+  { value: "lg", style: "rounded-br-lg" },
+  { value: "xl", style: "rounded-br-xl" },
+  { value: "2xl", style: "rounded-br-2xl" },
+  { value: "3xl", style: "rounded-br-3xl" },
+  { value: "full", style: "rounded-br-full" },
+];
+export const leftBorderRadiusDatalist = [
+  { value: "None", style: "rounded-bl-none" },
+  { value: "sm", style: "rounded-bl-sm" },
+  { value: "Normal", style: "rounded-bl" },
+  { value: "md", style: "rounded-bl-md" },
+  { value: "lg", style: "rounded-bl-lg" },
+  { value: "xl", style: "rounded-bl-xl" },
+  { value: "2xl", style: "rounded-bl-2xl" },
+  { value: "3xl", style: "rounded-bl-3xl" },
+  { value: "full", style: "rounded-bl-full" },
+];
+export const rightBorderRadiusDatalist = [
+  { value: "None", style: "rounded-tr-none" },
+  { value: "sm", style: "rounded-tr-sm" },
+  { value: "Normal", style: "rounded-tr" },
+  { value: "md", style: "rounded-tr-md" },
+  { value: "lg", style: "rounded-tr-lg" },
+  { value: "xl", style: "rounded-tr-xl" },
+  { value: "2xl", style: "rounded-tr-2xl" },
+  { value: "3xl", style: "rounded-tr-3xl" },
+  { value: "full", style: "rounded-tr-full" },
+];

@@ -12,12 +12,6 @@ import ButtonGroupElement from "../CommonComponents/ButtonGroupElement";
 import ColorElement from "../CommonComponents/ColorElement";
 
 const Border = () => {
-  const [allBorder, setAllBorder] = useState("border");
-  const [topBorder, setTopBorder] = useState("border-t");
-  const [bottomBorder, setBottomBorder] = useState("border-b");
-  const [leftBorder, setLeftBorder] = useState("border-l");
-  const [rightBorder, setRightBorder] = useState("border-r");
-
   const {
     borderSize,
     setBorderSize,
@@ -25,6 +19,18 @@ const Border = () => {
     setBorderStyle,
     borderColor,
     setBorderColor,
+    borderClassName,
+    setBorderClassName,
+    allBorder,
+    setAllBorder,
+    topBorder,
+    setTopBorder,
+    bottomBorder,
+    setBottomBorder,
+    leftBorder,
+    setLeftBorder,
+    rightBorder,
+    setRightBorder,
   } = useSiteData() || {};
   function setAll(item) {
     setAllBorder(item);
@@ -68,7 +74,7 @@ const Border = () => {
       classNameTemp = allBorder;
     }
     setBorderSize(classNameTemp);
-    console.log(classNameTemp);
+    // console.log(classNameTemp);
   }, [
     allBorder,
     topBorder,

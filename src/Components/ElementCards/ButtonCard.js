@@ -4,7 +4,7 @@ import { theme } from "../../Datalist/StyleConfigList.js/Theme";
 
 const ButtonCard = () => {
   const { allClassNameInOne } = useSiteData() || {};
-  console.log(allClassNameInOne);
+  // console.log(allClassNameInOne);
   return <button className={allClassNameInOne}>Click Me</button>;
 };
 

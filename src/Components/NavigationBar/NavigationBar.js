@@ -5,10 +5,6 @@ import logo from "./../../Assets/logo.png";
 import CustomElementLink from "../CommonComponents/CustomElementLink";
 
 const NavigationBar = () => {
-  const [isMoreButtonOpen, setIsMoreButtonOpen] = useState(false);
-  useEffect(() => {
-    console.log(isMoreButtonOpen);
-  }, [isMoreButtonOpen]);
   return (
     <div className="antialiased bg-gray-100 dark:bg-gray-900">
       <div className="w-full text-gray-700 bg-white dark:text-gray-200 dark:bg-gray-800">
@@ -39,32 +35,23 @@ const NavigationBar = () => {
               </Link>
             ))}
             <div className="relative group">
-              <button
-                className="px-4 py-2 -mt-2 text-sm font-semibold bg-transparent  rounded-lg dark:bg-transparent dark:hover:bg-gray-600 dark:focus:bg-gray-600 dark:focus:text-white dark:hover:text-white dark:text-gray-200  md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline group customize-btn"
-                onClick={() => setIsMoreButtonOpen((prev) => !prev)}
-              >
+              <button className="px-4 py-2 -mt-2 text-sm font-semibold bg-transparent  rounded-lg dark:bg-transparent dark:hover:bg-gray-600 dark:focus:bg-gray-600 dark:focus:text-white dark:hover:text-white dark:text-gray-200  md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline group customize-btn">
                 <span>Customize</span>
                 <span>
                   <i
-                    className={`fa-solid fa-chevron-down inline-block duration-200  ml-1 ${
-                      isMoreButtonOpen ? "-rotate-180" : ""
-                    }`}
+                    className={`fa-solid fa-chevron-down inline-block duration-200  ml-1 group-hover:-rotate-180 `}
                   ></i>
                 </span>
               </button>
               <div
-                className={`absolute z-40 right-0 top-full w-full md:max-w-screen-sm md:w-screen mt-0  none invisible group-hover:visible group-hover:block  group-hover:scale-y-100 group-hover:h-full scale-y-0 h-0 duration-200 transform origin-top`}
+                className={`absolute z-40 right-0 top-full w-full md:max-w-screen-sm md:w-screen mt-0  invisible group-hover:visible  group-hover:scale-y-100 group-hover:h-full scale-y-0 h-0 duration-200 transform origin-top`}
               >
                 <div
                   className={`px-2 pt-2 pb-4  bg-white rounded-md shadow-lg dark:bg-gray-700 `}
                 >
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4">
                     {moreNavlinkData.map((item, i) => (
-                      <Link
-                        key={i}
-                        to={"/customize/" + item.routelink}
-                        onClick={() => setIsMoreButtonOpen((prev) => !prev)}
-                      >
+                      <Link key={i} to={"/customize/" + item.routelink}>
                         <CustomElementLink item={item} />
                       </Link>
                     ))}

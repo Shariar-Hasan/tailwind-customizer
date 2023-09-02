@@ -1,5 +1,4 @@
 import React from "react";
-import Border from "../StyleDesign/Border";
 import { useSiteData } from "../../Context/AllContext";
 
 const BoxCard = ({ currentAttribute }) => {

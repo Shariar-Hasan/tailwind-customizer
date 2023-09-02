@@ -43,13 +43,13 @@ const ElementCard = ({ child }) => {
       <button
         onClick={() =>
           setThemeClassName((prev) =>
-            prev.value == "Light Mode" ? theme[1] : theme[0]
+            prev.value === "Light Mode" ? theme[1] : theme[0]
           )
         }
         className="bg-gray-900 rounded-md text-gray-200 p-3"
       >
         Switch to{" "}
-        {themeClassName.value == "Light Mode" ? "Dark Mode" : "Light Mode"}
+        {themeClassName.value === "Light Mode" ? "Dark Mode" : "Light Mode"}
       </button>
       <button
         className="ml-2 bg-gray-900 rounded-md text-gray-200 p-3"

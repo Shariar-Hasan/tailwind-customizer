@@ -5,10 +5,11 @@ import Contact from "./Pages/Contact";
 import Customize from "./Pages/Customize";
 import { Toaster } from "react-hot-toast";
 import NoPageFound from "./Pages/NoPageFound";
+import FooterBottom from "./Components/Footer/FooterBottom";
 
 function App() {
   return (
-    <div>
+    <>
       <Toaster position="top-right" reverseOrder={false} />
       <NavigationBar />
       <Routes>
@@ -18,7 +19,7 @@ function App() {
         <Route path="/customize/:element" element={<Customize />} />
         <Route path="/*" element={<NoPageFound />} />
       </Routes>
-    </div>
+    </>
   );
 }
 

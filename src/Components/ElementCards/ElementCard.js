@@ -49,9 +49,14 @@ const ElementCard = ({ child }) => {
         {showStyleChange ? "Hide Style Change" : "Show Style Change"}
       </button>
       <div
-        className={`preview flex justify-center items-center min-h-40 border-2 my-1 p-2 ${themeClassName.style}`}
+        className={`preview flex justify-center items-center min-h-40 border-2 my-1 p-0 ${themeClassName.style}`}
       >
-        <div className={showStyleChange ? `bg-gray-400 ` : ""}>{child}</div>
+        <div
+          title="This is the MARGIN of the element"
+          className={showStyleChange ? `bg-gray-400` : " "}
+        >
+          {child}
+        </div>
       </div>
       {
         <div

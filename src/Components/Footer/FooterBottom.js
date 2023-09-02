@@ -3,11 +3,15 @@ import { siteCofig } from "../../Datalist/SiteData";
 
 const FooterBottom = () => {
   return (
-    <div className="py-5">
-      <p className="text-center">
-        &867; Copyright {siteCofig?.copyRightYear} {siteCofig?.ownerName} || Made with Care😉 
-      </p>
-    </div>
+    <>
+      <div className="h-24 "></div>
+      <div className="py-5 mt-auto bg-gray-900 text-white bottom-0 w-full">
+        <p className="text-center">
+          ©️ Copyright {siteCofig?.copyRightYear} ||
+          <strong> {siteCofig?.ownerName}</strong> || Made with Care😉
+        </p>
+      </div>
+    </>
   );
 };
 

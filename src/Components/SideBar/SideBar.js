@@ -3,7 +3,7 @@ import { customizationList } from "../../Datalist/CustomizationList";
 
 const SideBar = ({ currentAttribute, setCurrentAttribute }) => {
   return (
-    <div className="box border border-gray-300">
+    <div className="box border border-gray-300 sticky top-0">
       <div className="routes">
         <h2 className="text-3xl mb-3 font-mono">Select Styles</h2>
         <hr />

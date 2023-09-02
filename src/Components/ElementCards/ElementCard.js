@@ -9,8 +9,34 @@ import { copy } from "../../Datalist/Functions/copyToClipBoard";
 
 const ElementCard = ({ child }) => {
   const [themeClassName, setThemeClassName] = useState(theme[0]);
-  const { allClassNameInOne, showStyleChange, setShowStyleChange } =
-    useSiteData();
+  const {
+    setAllBorderRadius,
+    setAllBorder,
+    setAllPadding,
+    setAllMargin,
+    allClassNameInOne,
+    setAllClassNameInOne,
+    showStyleChange,
+    setShowStyleChange,
+    setBorderRadiusClassName,
+    setBorderSize,
+    setBorderStyle,
+    setBorderColor,
+    setBorderClassName,
+    setOpacityClassName,
+    setFontSize,
+    setFontFamily,
+    setFontColor,
+    setFontWeight,
+    setPaddingClassName,
+    setMarginClassName,
+    setBackgroundClassName,
+    setDisplayClassName,
+    setTopMargin,
+    setBottomMargin,
+    setLeftMargin,
+    setRightMargin,
+  } = useSiteData();
   const { element = "" } = useParams();
   const [currentElement, setCurrentElement] = useState();
   const [showCode, setShowCode] = useState(false);
@@ -22,9 +48,38 @@ const ElementCard = ({ child }) => {
     );
     setCurrentElement(itemElement);
   }, [element]);
+  const resetAllClass = () => {
+    setBorderRadiusClassName("");
 
+    setBorderSize("");
+    setBorderStyle("");
+    setBorderColor("");
+    setBorderClassName("");
+    setOpacityClassName("");
+
+    setFontSize("");
+    setFontFamily("");
+    setFontColor("");
+    setFontWeight("");
+
+    setPaddingClassName("");
+
+    setMarginClassName("");
+
+    setBackgroundClassName("");
+
+    setDisplayClassName("");
+    setAllBorderRadius("");
+    setAllBorder("");
+    setAllPadding("");
+    setAllMargin("");
+    setTopMargin("");
+    setBottomMargin("");
+    setLeftMargin("");
+    setRightMargin("");
+  };
   return (
-    <div className="box p-2 shadow-sm">
+    <div className="box p-2 shadow-sm border-2">
       <button
         onClick={() =>
           setThemeClassName((prev) =>
@@ -46,14 +101,20 @@ const ElementCard = ({ child }) => {
         className="ml-2 bg-gray-900 rounded-md text-gray-200 p-3"
         onClick={() => setShowStyleChange((prev) => !prev)}
       >
-        {showStyleChange ? "Hide Style Change" : "Show Style Change"}
+        {showStyleChange ? "Hide Margin" : "Show Margin"}
       </button>
+      {/* <button
+        className="ml-2 bg-gray-900 rounded-md text-gray-200 p-3"
+        onClick={() => resetAllClass()}
+      >
+        Reset All Style
+      </button> */}
       <div
         className={`preview flex justify-center items-center min-h-40 border-2 my-1 p-0 ${themeClassName.style}`}
       >
         <div
           title="This is the MARGIN of the element"
-          className={showStyleChange ? `bg-gray-400` : " "}
+          className={showStyleChange ? `bg-striped` : " "}
         >
           {child}
         </div>

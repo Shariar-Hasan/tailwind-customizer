@@ -53,19 +53,19 @@ const Margin = () => {
     const top = topMarginDatalist.find((data) =>
       checker(data.style, "mt", allMargin, "m", true)
     );
-    setTopMargin(top.style);
+    setTopMargin(top?.style);
     const bottom = bottomMarginDatalist.find((data) =>
       checker(data.style, "mb", allMargin, "m", true)
     );
-    setBottomMargin(bottom.style);
+    setBottomMargin(bottom?.style);
     const left = leftMarginDatalist.find((data) =>
       checker(data.style, "ml", allMargin, "m", true)
     );
-    setLeftMargin(left.style);
+    setLeftMargin(left?.style);
     const right = rightMarginDatalist.find((data) =>
       checker(data.style, "mr", allMargin, "m", true)
     );
-    setRightMargin(right.style);
+    setRightMargin(right?.style);
     console.log({ top, bottom, left, right });
   }, [allMargin]);
   return (

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import {
   allBorderData,
   borderStyles,
@@ -13,14 +13,11 @@ import ColorElement from "../CommonComponents/ColorElement";
 
 const Border = () => {
   const {
-    borderSize,
     setBorderSize,
     borderStyle,
     setBorderStyle,
     borderColor,
     setBorderColor,
-    borderClassName,
-    setBorderClassName,
     allBorder,
     setAllBorder,
     topBorder,

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import ButtonGroupElement from "../CommonComponents/ButtonGroupElement";
 import {
   allPaddingDatalist,
@@ -12,7 +12,6 @@ import { useSiteData } from "../../Context/AllContext";
 const Padding = () => {
   // getting context data
   const {
-    paddingClassName,
     setPaddingClassName,
     allPadding,
     setAllPadding,

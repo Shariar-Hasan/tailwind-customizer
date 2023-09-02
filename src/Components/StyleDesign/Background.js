@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import ColorElement from "../CommonComponents/ColorElement";
 import { useSiteData } from "../../Context/AllContext";
 

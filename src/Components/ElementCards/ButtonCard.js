@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import { useSiteData } from "../../Context/AllContext";
-import { theme } from "../../Datalist/StyleConfigList.js/Theme";
 
 const ButtonCard = () => {
   const { allClassNameInOne } = useSiteData() || {};

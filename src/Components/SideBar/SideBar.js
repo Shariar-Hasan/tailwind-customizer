@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { customizationList } from "../../Datalist/CustomizationList";
 
 const SideBar = ({ currentAttribute, setCurrentAttribute }) => {

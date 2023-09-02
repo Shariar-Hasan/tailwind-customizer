@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import ButtonGroupElement from "../CommonComponents/ButtonGroupElement";
 import {
   rightBorderRadiusDatalist,
@@ -12,7 +12,6 @@ import { useSiteData } from "../../Context/AllContext";
 const BorderRadius = () => {
   // getting context data
   const {
-    borderRadiusClassName,
     setBorderRadiusClassName,
     allBorderRadius,
     setAllBorderRadius,

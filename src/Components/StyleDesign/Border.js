@@ -85,77 +85,77 @@ const Border = () => {
     <div className="text-center">
       <div className="grid grid-cols-3 gap-0 my-3">
         <div className="group col-span-1 col-start-2">
-          <h4 className="text-xl my-3">Border Top</h4>
           <ButtonGroupElement
             datalist={topBorderData}
             activeChecker={topBorder}
             setupFunction={setTopBorder}
             itemValue={"value"}
             toCheck={"style"}
+            heading={"Top"}
           />
         </div>
         <div className="group col-span-1 col-start-1">
-          <h4 className="text-xl my-3">Border Left</h4>
           <ButtonGroupElement
             datalist={leftBorderData}
             activeChecker={leftBorder}
             setupFunction={setLeftBorder}
             itemValue={"value"}
             toCheck={"style"}
+            heading={"Left"}
           />
         </div>
         <div className="group col-span-1">
-          <h4 className="text-xl my-3">All Border</h4>
           <ButtonGroupElement
             datalist={allBorderData}
             activeChecker={allBorder}
             setupFunction={setAll}
             itemValue={"value"}
             toCheck={"style"}
+            heading={"All Side"}
           />
         </div>
         <div className="group col-span-1">
-          <h4 className="text-xl my-3">Border Right</h4>
           <ButtonGroupElement
             datalist={rightBorderData}
             activeChecker={rightBorder}
             setupFunction={setRightBorder}
             itemValue={"value"}
             toCheck={"style"}
+            heading={"Right"}
           />
         </div>
         <div className="group col-span-1 col-start-2">
-          <h4 className="text-xl my-3">Border Bottom</h4>
           <ButtonGroupElement
             datalist={bottomBorderData}
             activeChecker={bottomBorder}
             setupFunction={setBottomBorder}
             itemValue={"value"}
             toCheck={"style"}
+            heading={"Bottom"}
           />
         </div>
       </div>
       <hr />
       <div className="grid gap-4 grid-cols-1">
         <div className="group col-span-1">
-          <h4 className="text-xl my-3">Border Styles</h4>
           <ButtonGroupElement
             datalist={borderStyles}
             activeChecker={borderStyle}
             setupFunction={setBorderStyle}
             itemValue={"value"}
             toCheck={"style"}
+            heading={"Border Styles"}
           />
         </div>
       </div>
       <hr />
       <div className="grid gap-4 grid-cols-1">
         <div className="group col-span-1">
-          <h4 className="text-xl my-3">Border Color</h4>
           <ColorElement
             checker={borderColor}
             attributeName={"border"}
             setupFunction={setBorderColor}
+            heading={"Border Color"}
           />
         </div>
       </div>

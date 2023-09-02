@@ -4,6 +4,7 @@ import Swal from "sweetalert2";
 import { useSiteData } from "../../Context/AllContext";
 import { useParams } from "react-router-dom";
 import { moreNavlinkData } from "../../Datalist/NavbarData";
+import { toast } from "react-hot-toast";
 
 const ElementCard = ({ child }) => {
   const [themeClassName, setThemeClassName] = useState(theme[0]);
@@ -30,13 +31,11 @@ const ElementCard = ({ child }) => {
     // Select and copy the text
     tempInput.select();
     document.execCommand("copy");
-    Swal.fire({
-      title: "Copied",
-      icon: "success",
-    });
-
     // Remove the temporary input element
     document.body.removeChild(tempInput);
+
+    toast.success("Code Successfully Copied!");
+
   };
   return (
     <div className="box p-2 shadow-sm">
@@ -65,7 +64,9 @@ const ElementCard = ({ child }) => {
       {
         <div
           className={`duration-300  bg-gray-900 p-10 text-gray-200 font-mono cursor-pointer origin-top  ${
-            showCode ? "h-full scale-y-100 visible block" : "h-0 scale-y-0 invisible hidden"
+            showCode
+              ? "h-full scale-y-100 visible block"
+              : "h-0 scale-y-0 invisible hidden"
           }`}
           title="Click to Copy"
           onClick={copy}

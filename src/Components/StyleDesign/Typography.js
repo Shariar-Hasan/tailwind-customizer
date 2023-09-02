@@ -22,46 +22,46 @@ const Typography = () => {
   return (
     <div className="text-center">
       <div className="group">
-        <h4 className="text-xl my-3">Font Weight</h4>
         <ButtonGroupElement
           datalist={fontWeightDatalist}
           activeChecker={fontWeight}
           setupFunction={setFontWeight}
           itemValue={"value"}
           toCheck={"style"}
+          heading={"Font Weight"}
         />
       </div>
       <div className="group col-span-1">
-        <h4 className="text-xl my-3">Font Family</h4>
         <ButtonGroupElement
           datalist={fontFamilyDatalist}
           activeChecker={fontFamily}
           setupFunction={setFontFamily}
           itemValue={"value"}
           toCheck={"style"}
+          heading={"Font Family"}
         />
       </div>
       <hr />
       <div className="grid gap-4 grid-cols-1">
         <div className="group col-span-1">
-          <h4 className="text-xl my-3">Font Size</h4>
           <ButtonGroupElement
             datalist={fontSizeDatalist}
             activeChecker={fontSize}
             setupFunction={setFontSize}
             itemValue={"value"}
             toCheck={"style"}
+            heading={"Font Size"}
           />
         </div>
       </div>
       <hr />
       <div className="grid gap-4 grid-cols-1">
         <div className="group col-span-1">
-          <h4 className="text-xl my-3">Font Color</h4>
           <ColorElement
             checker={fontColor}
             attributeName={"text"}
             setupFunction={setFontColor}
+            heading={"Font Color"}
           />
         </div>
       </div>

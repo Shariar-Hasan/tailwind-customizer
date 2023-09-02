@@ -8,6 +8,7 @@ import {
   topBorderRadiusDatalist,
 } from "./../../Datalist/StyleConfigList.js/BorderRadius";
 import { useSiteData } from "../../Context/AllContext";
+import { checker } from "./../../Datalist/Functions/similarityChecker";
 
 const BorderRadius = () => {
   // getting context data
@@ -31,6 +32,7 @@ const BorderRadius = () => {
     // set top border
     const top = topBorderRadiusDatalist.find(
       (data) =>
+        //checker(allMargin, "m", topMargin, "mt", false)
         data.style.replace("rounded-tl", "") === item.replace("rounded", "")
     );
     setTopBorderRadius(top.style);
@@ -58,14 +60,34 @@ const BorderRadius = () => {
   useEffect(() => {
     let classNameTemp = null;
     if (
-      allBorderRadius.replace("rounded", "") !==
-        topBorderRadius.replace("rounded-tl", "") ||
-      allBorderRadius.replace("rounded", "") !==
-        rightBorderRadius.replace("rounded-tr", "") ||
-      allBorderRadius.replace("rounded", "") !==
-        leftBorderRadius.replace("rounded-bl", "") ||
-      allBorderRadius.replace("rounded", "") !==
-        bottomBorderRadius.replace("rounded-br", "")
+      checker(
+        allBorderRadius,
+        "rounded",
+        topBorderRadius,
+        "rounded-tl",
+        false
+      ) ||
+      checker(
+        allBorderRadius,
+        "rounded",
+        rightBorderRadius,
+        "rounded-tr",
+        false
+      ) ||
+      checker(
+        allBorderRadius,
+        "rounded",
+        leftBorderRadius,
+        "rounded-bl",
+        false
+      ) ||
+      checker(
+        allBorderRadius,
+        "rounded",
+        bottomBorderRadius,
+        "rounded-br",
+        false
+      )
     ) {
       classNameTemp = `${topBorderRadius} ${bottomBorderRadius} ${leftBorderRadius} ${rightBorderRadius}`;
     } else {
@@ -84,57 +106,57 @@ const BorderRadius = () => {
     <div className="text-center">
       <div className="grid grid-cols-3 gap-0 my-3">
         <div className="group col-span-1 ">
-          <h4 className="text-xl my-3">Top left BorderRadius </h4>
           <ButtonGroupElement
             datalist={topBorderRadiusDatalist}
             activeChecker={topBorderRadius}
             setupFunction={setTopBorderRadius}
             itemValue={"value"}
             toCheck={"style"}
+            heading={"Top left"}
           />
         </div>
         <div className="group col-span-1 col-start-3">
-          <h4 className="text-xl my-3">BorderRadius Top Right</h4>
           <ButtonGroupElement
             datalist={rightBorderRadiusDatalist}
             activeChecker={rightBorderRadius}
             setupFunction={setRightBorderRadius}
             itemValue={"value"}
             toCheck={"style"}
+            heading={"Top Right"}
           />
         </div>
       </div>
       <div className="grid grid-cols-3 gap-0 my-3">
         <div className="group col-span-1 col-start-2">
-          <h4 className="text-xl my-3">All BorderRadius</h4>
           <ButtonGroupElement
             datalist={allBorderRadiusDatalist}
             activeChecker={allBorderRadius}
             setupFunction={setAll}
             itemValue={"value"}
             toCheck={"style"}
+            heading={"All Side"}
           />
         </div>
       </div>
       <div className="grid grid-cols-3 gap-0 my-3">
         <div className="group col-span-1 col-start-1">
-          <h4 className="text-xl my-3">BorderRadius Bottom Left </h4>
           <ButtonGroupElement
             datalist={leftBorderRadiusDatalist}
             activeChecker={leftBorderRadius}
             setupFunction={setLeftBorderRadius}
             itemValue={"value"}
             toCheck={"style"}
+            heading={"Bottom Left"}
           />
         </div>
         <div className="group col-span-1 col-start-3">
-          <h4 className="text-xl my-3">BorderRadius Bottom Right</h4>
           <ButtonGroupElement
             datalist={bottomBorderRadiusDatalist}
             activeChecker={bottomBorderRadius}
             setupFunction={setBottomBorderRadius}
             itemValue={"value"}
             toCheck={"style"}
+            heading={"Bottom Right"}
           />
         </div>
       </div>

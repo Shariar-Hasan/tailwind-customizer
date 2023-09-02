@@ -8,6 +8,7 @@ import {
   topPaddingDatalist,
 } from "../../Datalist/StyleConfigList.js/Padding";
 import { useSiteData } from "../../Context/AllContext";
+import { checker } from "../../Datalist/Functions/similarityChecker";
 
 const Padding = () => {
   // getting context data
@@ -28,36 +29,15 @@ const Padding = () => {
   //   load data
   function setAll(item) {
     setAllPadding(item);
-    // set top border
-    const top = topPaddingDatalist.find(
-      (data) => data.style.replace("pt", "") === item.replace("p", "")
-    );
-    setTopPadding(top.style);
-    // set bottom border
-    const bottom = bottomPaddingDatalist.find(
-      (data) => data.style.replace("pb", "") === item.replace("p", "")
-    );
-    setBottomPadding(bottom.style);
-    // set left border
-    const left = leftPaddingDatalist.find(
-      (data) => data.style.replace("pl", "") === item.replace("p", "")
-    );
-    setLeftPadding(left.style);
-    // set right border
-    const right = rightPaddingDatalist.find(
-      (data) => data.style.replace("pr", "") === item.replace("p", "")
-    );
-    setRightPadding(right.style);
-    console.log({ item, top, bottom, left, right });
   }
 
   useEffect(() => {
     let classNameTemp = null;
     if (
-      allPadding.replace("p", "") !== topPadding.replace("pt", "") ||
-      allPadding.replace("p", "") !== rightPadding.replace("pr", "") ||
-      allPadding.replace("p", "") !== leftPadding.replace("pl", "") ||
-      allPadding.replace("p", "") !== bottomPadding.replace("pb", "")
+      checker(allPadding, "p", topPadding, "pt", false) ||
+      checker(allPadding, "p", rightPadding, "pr", false) ||
+      checker(allPadding, "p", leftPadding, "pl", false) ||
+      checker(allPadding, "p", bottomPadding, "pb", false)
     ) {
       classNameTemp = `${topPadding} ${bottomPadding} ${leftPadding} ${rightPadding}`;
     } else {
@@ -65,12 +45,33 @@ const Padding = () => {
     }
     setPaddingClassName(classNameTemp);
     // console.log(classNameTemp);
-  }, [allPadding, topPadding, leftPadding, rightPadding, bottomPadding]);
+  }, [topPadding, leftPadding, rightPadding, bottomPadding]);
+  useEffect(() => {
+    // set top border
+    const top = topPaddingDatalist.find((data) =>
+      checker(data.style, "pt", allPadding, "p", true)
+    );
+    setTopPadding(top.style);
+    // set bottom border
+    const bottom = bottomPaddingDatalist.find((data) =>
+      checker(data.style, "pb", allPadding, "p", true)
+    );
+    setBottomPadding(bottom.style);
+    // set left border
+    const left = leftPaddingDatalist.find((data) =>
+      checker(data.style, "pl", allPadding, "p", true)
+    );
+    setLeftPadding(left.style);
+    // set right border
+    const right = rightPaddingDatalist.find((data) =>
+      checker(data.style, "pr", allPadding, "p", true)
+    );
+    setRightPadding(right.style);
+  }, [allPadding]);
   return (
     <div className="text-center">
       <div className="grid grid-cols-3 gap-0 my-3">
         <div className="group col-span-1 col-start-2">
-          <h4 className="text-xl my-3">Padding Top</h4>
           <ButtonGroupElement
             datalist={topPaddingDatalist}
             activeChecker={topPadding}
@@ -78,10 +79,10 @@ const Padding = () => {
             itemValue={"value"}
             toCheck={"style"}
             grid={7}
+            heading={"Top"}
           />
         </div>
         <div className="group col-span-1 col-start-1">
-          <h4 className="text-xl my-3">Padding Left</h4>
           <ButtonGroupElement
             datalist={leftPaddingDatalist}
             activeChecker={leftPadding}
@@ -89,10 +90,10 @@ const Padding = () => {
             itemValue={"value"}
             toCheck={"style"}
             grid={7}
+            heading={"Left"}
           />
         </div>
         <div className="group col-span-1">
-          <h4 className="text-xl my-3">All Padding</h4>
           <ButtonGroupElement
             datalist={allPaddingDatalist}
             activeChecker={allPadding}
@@ -100,10 +101,10 @@ const Padding = () => {
             itemValue={"value"}
             toCheck={"style"}
             grid={7}
+            heading={"All Side"}
           />
         </div>
         <div className="group col-span-1">
-          <h4 className="text-xl my-3">Padding Right</h4>
           <ButtonGroupElement
             datalist={rightPaddingDatalist}
             activeChecker={rightPadding}
@@ -111,10 +112,10 @@ const Padding = () => {
             itemValue={"value"}
             toCheck={"style"}
             grid={7}
+            heading={"Right"}
           />
         </div>
         <div className="group col-span-1 col-start-2">
-          <h4 className="text-xl my-3">Padding Bottom</h4>
           <ButtonGroupElement
             datalist={bottomPaddingDatalist}
             activeChecker={bottomPadding}
@@ -122,6 +123,7 @@ const Padding = () => {
             itemValue={"value"}
             toCheck={"style"}
             grid={7}
+            heading={"Bottom"}
           />
         </div>
       </div>

@@ -8,11 +8,11 @@ const Background = () => {
     <div className="text-center">
       <div className="grid gap-4 grid-cols-1">
         <div className="group col-span-1">
-          <h4 className="text-xl my-3">Background Color</h4>
           <ColorElement
             checker={backgroundClassName}
             attributeName={"bg"}
             setupFunction={setBackgroundClassName}
+            heading={"Background Color"}
           />
         </div>
       </div>

@@ -51,22 +51,22 @@ const Padding = () => {
     const top = topPaddingDatalist.find((data) =>
       checker(data.style, "pt", allPadding, "p", true)
     );
-    setTopPadding(top.style);
+    setTopPadding(top?.style);
     // set bottom border
     const bottom = bottomPaddingDatalist.find((data) =>
       checker(data.style, "pb", allPadding, "p", true)
     );
-    setBottomPadding(bottom.style);
+    setBottomPadding(bottom?.style);
     // set left border
     const left = leftPaddingDatalist.find((data) =>
       checker(data.style, "pl", allPadding, "p", true)
     );
-    setLeftPadding(left.style);
+    setLeftPadding(left?.style);
     // set right border
     const right = rightPaddingDatalist.find((data) =>
       checker(data.style, "pr", allPadding, "p", true)
     );
-    setRightPadding(right.style);
+    setRightPadding(right?.style);
   }, [allPadding]);
   return (
     <div className="text-center">

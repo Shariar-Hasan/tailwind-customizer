@@ -9,6 +9,7 @@ function App() {
   return (
     <div>
       <Toaster position="top-right" reverseOrder={false} />
+      <NavigationBar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contact />} />

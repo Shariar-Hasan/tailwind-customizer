@@ -58,7 +58,7 @@ export const SiteProvider = ({ children }) => {
   const [rightMargin, setRightMargin] = useState("");
 
   // bg classes
-  const [backgroundClassName, setBackgroundClassName] = useState("bg-gray-600");
+  const [backgroundClassName, setBackgroundClassName] = useState("bg-gray-300");
 
   // all classes
   const [allClassNameInOne, setAllClassNameInOne] = useState("");

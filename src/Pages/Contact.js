@@ -1,16 +1,16 @@
 import React from "react";
-import NavigationBar from "../Components/NavigationBar/NavigationBar";
 import ContactCard from "../Components/ContactCard/ContactCard";
 import { contactList } from "../Datalist/ContactList";
 
 const Contact = () => {
   return (
     <div>
-      <NavigationBar />
       <div className="container mx-auto my-4">
         <div className="box shadow">
-          <p className="text-lg">
-            Hello there, My name is Shariar Hasan, Owner of this website. Feel free to get in touch with me through the links given below, if you want. 🥳
+          <p className="text-lg font-mono">
+            Hello there, My name is Shariar Hasan, Owner of this website. Feel
+            free to get in touch with me through the links given below, if you
+            want. 🥳
           </p>
         </div>
         <div className="grid grid-cols-12">

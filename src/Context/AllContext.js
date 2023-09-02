@@ -19,17 +19,21 @@ export const SiteProvider = ({ children }) => {
 
   // border classes
   const [borderClassName, setBorderClassName] = useState("");
-  const [borderSize, setBorderSize] = useState("border");
-  const [borderStyle, setBorderStyle] = useState("border-solid");
-  const [borderColor, setBorderColor] = useState("border-black");
+  const [borderSize, setBorderSize] = useState("");
+  const [borderStyle, setBorderStyle] = useState("");
+  const [borderColor, setBorderColor] = useState("");
 
-  const [allBorder, setAllBorder] = useState("border");
-  const [topBorder, setTopBorder] = useState("border-t");
-  const [bottomBorder, setBottomBorder] = useState("border-b");
-  const [leftBorder, setLeftBorder] = useState("border-l");
-  const [rightBorder, setRightBorder] = useState("border-r");
+  const [allBorder, setAllBorder] = useState("");
+  const [topBorder, setTopBorder] = useState("");
+  const [bottomBorder, setBottomBorder] = useState("");
+  const [leftBorder, setLeftBorder] = useState("");
+  const [rightBorder, setRightBorder] = useState("");
+
   // opacity class
   const [opacityClassName, setOpacityClassName] = useState("");
+
+  // display class
+  const [displayClassName, setDisplayClassName] = useState("");
 
   // font classes
   const [fontSize, setFontSize] = useState("");
@@ -38,29 +42,30 @@ export const SiteProvider = ({ children }) => {
   const [fontWeight, setFontWeight] = useState("");
 
   // padding classes
-  const [paddingClassName, setPaddingClassName] = useState("p-5");
-  const [allPadding, setAllPadding] = useState("");
+  const [paddingClassName, setPaddingClassName] = useState("");
+  const [allPadding, setAllPadding] = useState("p-5");
   const [topPadding, setTopPadding] = useState("");
   const [bottomPadding, setBottomPadding] = useState("");
   const [leftPadding, setLeftPadding] = useState("");
   const [rightPadding, setRightPadding] = useState("");
 
   // margin classes
-  const [marginClassName, setMarginClassName] = useState("m-5");
-
-  const [allMargin, setAllMargin] = useState("");
+  const [marginClassName, setMarginClassName] = useState("");
+  const [allMargin, setAllMargin] = useState("m-5");
   const [topMargin, setTopMargin] = useState("");
   const [bottomMargin, setBottomMargin] = useState("");
   const [leftMargin, setLeftMargin] = useState("");
   const [rightMargin, setRightMargin] = useState("");
+
   // bg classes
   const [backgroundClassName, setBackgroundClassName] = useState("bg-gray-600");
 
   // all classes
   const [allClassNameInOne, setAllClassNameInOne] = useState("");
   useEffect(() => {
-    const fullClassName = `${borderRadiusClassName} ${borderClassName} ${borderSize} ${borderStyle} ${borderColor} ${opacityClassName} ${fontColor} ${fontFamily} ${fontWeight} ${fontSize} ${paddingClassName} ${marginClassName} ${backgroundClassName} `;
+    const fullClassName = `${borderRadiusClassName} ${borderClassName} ${borderSize} ${borderStyle} ${borderColor} ${opacityClassName} ${fontColor} ${fontFamily} ${fontWeight} ${fontSize} ${paddingClassName} ${marginClassName} ${backgroundClassName} ${displayClassName}`;
     setAllClassNameInOne(fullClassName);
+    console.log(fullClassName)
   }, [
     borderRadiusClassName,
     borderClassName,
@@ -79,6 +84,8 @@ export const SiteProvider = ({ children }) => {
     setFontColor,
     fontWeight,
     setFontWeight,
+    displayClassName,
+    setDisplayClassName,
   ]);
   const value = {
     // radius
@@ -160,6 +167,10 @@ export const SiteProvider = ({ children }) => {
     // bg color
     backgroundClassName,
     setBackgroundClassName,
+
+    // display
+    displayClassName,
+    setDisplayClassName,
 
     //all class name in one
     allClassNameInOne,

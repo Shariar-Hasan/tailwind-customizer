@@ -8,13 +8,13 @@ const Opacity = () => {
   return (
     <div className="text-center">
       <div className="group">
-        <h4 className="text-xl my-3">Opacity</h4>
         <ButtonGroupElement
           datalist={opacityDataList}
           activeChecker={opacityClassName}
           setupFunction={setOpacityClassName}
           itemValue={"value"}
           toCheck={"style"}
+          heading={"Opacity"}
         />
       </div>
     </div>

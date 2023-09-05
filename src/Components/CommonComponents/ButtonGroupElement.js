@@ -18,7 +18,7 @@ const ButtonGroupElement = ({
         }`}
       >
         {datalist.map((item, i) => (
-          <button
+          <button type="button"
             key={i}
             onClick={() => setupFunction(item[toCheck])}
             className={`btn p-2  bg-gray-100 col-span-1 duration-200 border  text-black  ${

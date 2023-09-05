@@ -13,7 +13,6 @@ import { checker } from "../../Datalist/Functions/similarityChecker";
 const Margin = () => {
   // getting context data
   const {
-    marginClassName,
     setMarginClassName,
     allMargin,
     setAllMargin,

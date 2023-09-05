@@ -6,6 +6,8 @@ import { useParams } from "react-router-dom";
 import { moreNavlinkData } from "../../Datalist/NavbarData";
 import { toast } from "react-hot-toast";
 import { copy } from "../../Datalist/Functions/copyToClipBoard";
+import GeneratedCode from "../CommonComponents/GeneratedCode";
+import withReactContent from "sweetalert2-react-content";
 
 const ElementCard = ({ child }) => {
   const [themeClassName, setThemeClassName] = useState(theme[0]);
@@ -48,39 +50,57 @@ const ElementCard = ({ child }) => {
     );
     setCurrentElement(itemElement);
   }, [element]);
-  const resetAllClass = () => {
-    setBorderRadiusClassName("");
+  // const resetAllClass = () => {
+  //   setBorderRadiusClassName("");
 
-    setBorderSize("");
-    setBorderStyle("");
-    setBorderColor("");
-    setBorderClassName("");
-    setOpacityClassName("");
+  //   setBorderSize("");
+  //   setBorderStyle("");
+  //   setBorderColor("");
+  //   setBorderClassName("");
+  //   setOpacityClassName("");
 
-    setFontSize("");
-    setFontFamily("");
-    setFontColor("");
-    setFontWeight("");
+  //   setFontSize("");
+  //   setFontFamily("");
+  //   setFontColor("");
+  //   setFontWeight("");
 
-    setPaddingClassName("");
+  //   setPaddingClassName("");
 
-    setMarginClassName("");
+  //   setMarginClassName("");
 
-    setBackgroundClassName("");
+  //   setBackgroundClassName("");
 
-    setDisplayClassName("");
-    setAllBorderRadius("");
-    setAllBorder("");
-    setAllPadding("");
-    setAllMargin("");
-    setTopMargin("");
-    setBottomMargin("");
-    setLeftMargin("");
-    setRightMargin("");
+  //   setDisplayClassName("");
+  //   setAllBorderRadius("");
+  //   setAllBorder("");
+  //   setAllPadding("");
+  //   setAllMargin("");
+  //   setTopMargin("");
+  //   setBottomMargin("");
+  //   setLeftMargin("");
+  //   setRightMargin("");
+  // };
+
+  const showCodeResult = () => {
+    const ReactSwal = withReactContent(Swal);
+    ReactSwal.fire({
+      title: "Successfully generated",
+      icon: "success",
+      grow: "row",
+      footer: "Click on code to copy",
+      html: (
+        <GeneratedCode
+          currentElement={currentElement}
+          allClassNameInOne={allClassNameInOne}
+        />
+      ),
+      showCloseButton: true,
+    });
   };
   return (
     <div className="box p-2 shadow-sm border-2">
-      <button type="button"
+      <button
+        type="button"
         onClick={() =>
           setThemeClassName((prev) =>
             prev.value === "Light Mode" ? theme[1] : theme[0]
@@ -91,13 +111,16 @@ const ElementCard = ({ child }) => {
         Switch to{" "}
         {themeClassName.value === "Light Mode" ? "Dark Mode" : "Light Mode"}
       </button>
-      <button type="button"
+      <button
+        type="button"
         className="ml-2 bg-gray-900 rounded-md text-gray-200 p-3"
-        onClick={() => setShowCode((prev) => !prev)}
+        // onClick={() => setShowCode((prev) => !prev)}
+        onClick={() => showCodeResult()}
       >
         {showCode ? "Hide Code" : "Generate Code"}
       </button>
-      <button type="button"
+      <button
+        type="button"
         className="ml-2 bg-gray-900 rounded-md text-gray-200 p-3"
         onClick={() => setShowStyleChange((prev) => !prev)}
       >

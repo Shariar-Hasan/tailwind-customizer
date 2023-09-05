@@ -50,37 +50,6 @@ const ElementCard = ({ child }) => {
     );
     setCurrentElement(itemElement);
   }, [element]);
-  // const resetAllClass = () => {
-  //   setBorderRadiusClassName("");
-
-  //   setBorderSize("");
-  //   setBorderStyle("");
-  //   setBorderColor("");
-  //   setBorderClassName("");
-  //   setOpacityClassName("");
-
-  //   setFontSize("");
-  //   setFontFamily("");
-  //   setFontColor("");
-  //   setFontWeight("");
-
-  //   setPaddingClassName("");
-
-  //   setMarginClassName("");
-
-  //   setBackgroundClassName("");
-
-  //   setDisplayClassName("");
-  //   setAllBorderRadius("");
-  //   setAllBorder("");
-  //   setAllPadding("");
-  //   setAllMargin("");
-  //   setTopMargin("");
-  //   setBottomMargin("");
-  //   setLeftMargin("");
-  //   setRightMargin("");
-  // };
-
   const showCodeResult = () => {
     const ReactSwal = withReactContent(Swal);
     ReactSwal.fire({
@@ -114,10 +83,9 @@ const ElementCard = ({ child }) => {
       <button
         type="button"
         className="ml-2 bg-gray-900 rounded-md text-gray-200 p-3"
-        // onClick={() => setShowCode((prev) => !prev)}
         onClick={() => showCodeResult()}
       >
-        {showCode ? "Hide Code" : "Generate Code"}
+        Generate Code
       </button>
       <button
         type="button"
@@ -126,12 +94,6 @@ const ElementCard = ({ child }) => {
       >
         {showStyleChange ? "Hide Margin" : "Show Margin"}
       </button>
-      {/* <button type="button"
-        className="ml-2 bg-gray-900 rounded-md text-gray-200 p-3"
-        onClick={() => resetAllClass()}
-      >
-        Reset All Style
-      </button> */}
       <div
         className={`preview flex justify-center items-center min-h-40 border-2 my-1 p-0 ${themeClassName.style}`}
       >

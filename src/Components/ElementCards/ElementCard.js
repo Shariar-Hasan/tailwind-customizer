@@ -80,7 +80,7 @@ const ElementCard = ({ child }) => {
   };
   return (
     <div className="box p-2 shadow-sm border-2">
-      <button
+      <button type="button"
         onClick={() =>
           setThemeClassName((prev) =>
             prev.value === "Light Mode" ? theme[1] : theme[0]
@@ -91,19 +91,19 @@ const ElementCard = ({ child }) => {
         Switch to{" "}
         {themeClassName.value === "Light Mode" ? "Dark Mode" : "Light Mode"}
       </button>
-      <button
+      <button type="button"
         className="ml-2 bg-gray-900 rounded-md text-gray-200 p-3"
         onClick={() => setShowCode((prev) => !prev)}
       >
         {showCode ? "Hide Code" : "Generate Code"}
       </button>
-      <button
+      <button type="button"
         className="ml-2 bg-gray-900 rounded-md text-gray-200 p-3"
         onClick={() => setShowStyleChange((prev) => !prev)}
       >
         {showStyleChange ? "Hide Margin" : "Show Margin"}
       </button>
-      {/* <button
+      {/* <button type="button"
         className="ml-2 bg-gray-900 rounded-md text-gray-200 p-3"
         onClick={() => resetAllClass()}
       >
